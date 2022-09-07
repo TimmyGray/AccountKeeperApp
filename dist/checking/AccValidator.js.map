@@ -1,0 +1,1 @@
+{"version":3,"file":"AccValidator.js","sourceRoot":"","sources":["../../source/checking/AccValidator.ts"],"names":[],"mappings":";;;AAAA,qDAAkD;AAElD,MAAM,YAAa,SAAQ,qBAAS;IAEnC,gBAAgB,CAAC,WAAmB;QACnC,IAAI,WAAW,GAAG,CAAC,EAAE;YACpB,OAAO,KAAK,CAAC;SACb;QACD,OAAO,IAAI,CAAC;IACV,CAAC;CAEJ;AAEU,QAAA,YAAY,GAAiB,IAAI,YAAY,EAAE,CAAC"}

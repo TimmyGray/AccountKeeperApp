@@ -1,3 +1,9 @@
 export abstract class Validator {
-    abstract ValueCheck(checkstring: string| number): boolean;
+
+    StringValueCheck(checkstring: string): boolean {
+        if (checkstring.length > 20 || checkstring.length < 1) {
+            return false;
+        }
+        return true;
+    }
 }

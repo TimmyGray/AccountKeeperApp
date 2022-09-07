@@ -1,6 +1,6 @@
 export abstract class ControllerBase {
-    abstract GetAcc(request,response);
-    abstract AddAcc(request,response);
-    abstract DeleteAcc(request,response);
-    abstract EditAcc(request,response);
+    abstract Get(request,response);
+    abstract Add(request,response);
+    abstract Delete(request,response);
+    abstract Edit(request,response);
 }

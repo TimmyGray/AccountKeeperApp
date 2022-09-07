@@ -1,10 +1,15 @@
 import { Validator } from "../checking/Validator";
 
 class UserValidator extends Validator {
-    ValueCheck(checkstring: string | number): boolean {
-        throw new Error("Method not implemented.");
-    }
-    
+
   
+    DoubleCheck(checkstring: string, doublecheck: string): boolean {
+        if (checkstring != doublecheck) {
+            return false;
+        }
+        return true;
+    }
 
 }
+
+export let uservalidator: UserValidator = new UserValidator();

@@ -3,17 +3,17 @@ import * as Express from "express";
 import { Account } from "../models/Account";
 
 export class AccController extends ControllerBase {
-    GetAcc(request, response) {
-        response.send("Get Method");
+    Get(request, response) {
+        response.send("Get Acc");
     }
-    AddAcc(request,response) {
-        response.send("Add Method");
+    Add(request,response) {
+        response.send("Add Acc");
     }
-    DeleteAcc(request,response) {
-        response.send("Delete Method");
+    Delete(request,response) {
+        response.send("Delete Acc");
     }
-    EditAcc(request, response) {
-        response.send("Edit Method");
+    Edit(request, response) {
+        response.send("Edit Acc");
     }
 
 }

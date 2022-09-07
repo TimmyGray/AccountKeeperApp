@@ -1,16 +1,18 @@
-export abstract class BaseUser {
+import { uservalidator } from "../checking/UserValidator";
+
+export class User {
+
     Id: number;
     private UserName: string;
     private UserPassword: string;
-    
 
     get Name(): string {
         return this.UserName;
     }
 
     set Name(name: string) {
-        if (name.length > 20) {
-            throw "Name must be less then 20 characters";
+        if (!uservalidator.StringValueCheck(name)) {
+            throw "Incorrect Login";
         }
         else {
             this.UserName = name;
@@ -21,7 +23,20 @@ export abstract class BaseUser {
         return this.UserPassword;
     }
 
-    set Password(password: string) {
-        if()
+    SetPassword(password: string, doublecheck: string) {
+        if (uservalidator.StringValueCheck(password)) {
+
+            if (uservalidator.DoubleCheck(password, doublecheck)) {
+                this.UserPassword = password;
+            }
+            else {
+                throw "Passwords do not match";
+            }
+            
+        }
+        else {
+            throw "Incorrect Password";
+        }
+       
     }
 }

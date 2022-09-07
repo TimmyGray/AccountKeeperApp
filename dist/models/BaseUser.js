@@ -1,13 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BaseUser = void 0;
-class BaseUser {
+exports.User = void 0;
+const UserValidator_1 = require("../checking/UserValidator");
+class User {
     get Name() {
         return this.UserName;
     }
     set Name(name) {
-        if (name.length > 20) {
-            throw "Name must be less then 20 characters";
+        if (!UserValidator_1.uservalidator.StringValueCheck(name)) {
+            throw "Incorrect Login";
         }
         else {
             this.UserName = name;
@@ -16,10 +17,19 @@ class BaseUser {
     get Password() {
         return this.UserPassword;
     }
-    set Password(password) {
-        if ()
-            ;
+    SetPassword(password, doublecheck) {
+        if (UserValidator_1.uservalidator.StringValueCheck(password)) {
+            if (UserValidator_1.uservalidator.DoubleCheck(password, doublecheck)) {
+                this.UserPassword = password;
+            }
+            else {
+                throw "Passwords do not match";
+            }
+        }
+        else {
+            throw "Incorrect Password";
+        }
     }
 }
-exports.BaseUser = BaseUser;
+exports.User = User;
 //# sourceMappingURL=BaseUser.js.map
